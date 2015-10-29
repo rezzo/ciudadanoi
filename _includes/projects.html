@@ -1,17 +1,20 @@
-  <h2>Proyectos</h2>
-      <ul id="og-grid" class="og-grid">
-        {% for post in site.posts %}
-          <li>
-            <a href="{{ post.site_url }}" data-largesrc="{{ post.img }}" data-title="{{ post.title }}" data-description="{{ post.description }}" data-siteurl="{{ post.site_url }}">
-              <img src="{{ post.thumb }}" alt="{{ post.img }}"/>
-              <div class="{{ post.estado }}">{{ post.estado }}</div>
+<section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="menu-interno">Selecciona el proyecto que quieras conocer. Para más detalles revisa la<a href="{{ site.baseurl}}/projects/088-ddah.html"> historia de nuestros proyectos</a>.</div>
+    <ul id="og-grid" class="og-grid">
+        {% for project in site.projects %}
+        <li>
+            <a href="{{ project.site_url }}" data-largesrc="img/projects/{{ project.img }}" data-title="{{ project.title }}" data-description="{{ project.description }}" data-siteurl="{{ project.site_url }}">
+                <img src="img/projects/thumbs/{{ project.thumb }}" alt="img/projects/{{ project.img }}"/>
+                <div class="{{ project.status }}">{{ project.status }}</div>
             </a>
-          </li>
+        </li>
         {% endfor %}
-      </ul>
+    </ul>
     <script src="{{ site.baseurl }}/js/grid.js"></script>
     <script>
-      $(function() {
-        Grid.init();
-      });
+    $(function() {
+    Grid.init();
+    });
     </script>
+</section>
